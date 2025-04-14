@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@sencha/ext": "^7.8.0",
     "@sencha/reext": "^1.0.425",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

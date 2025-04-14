@@ -379,24 +379,16 @@ export const Transactions = () => {
                     values.deadline_date = new Date(values.deadline_date);
                   }
 
-                  if (record) {
-                    const updatedTransactions = transactions.map((t) =>
-                      t.task_id === record.get("task_id")
-                        ? { ...values, task_id: record.get("task_id") }
-                        : t
-                    );
-                    setTransactions(updatedTransactions);
-                  } else {
+                  setTransactions((prevTransactions) => {
                     const newTransaction = {
                       ...values,
-                      task_id: Date.now(),
+                      task_id:
+                        prevTransactions[prevTransactions.length - 1].task_id +
+                        1,
                     };
 
-                    setTransactions((prevTransactions) => [
-                      ...prevTransactions,
-                      newTransaction,
-                    ]);
-                  }
+                    return [...prevTransactions, newTransaction];
+                  });
 
                   win.close();
 

@@ -657,28 +657,6 @@ export const Analytics = (props) => {
                             colors: ["#34a853", "#ea4335"],
                           },
                         ],
-                        listeners: {
-                          afterrender: function (chart) {
-                            const intervalId = setInterval(function () {
-                              const store = chart.getStore();
-                              store.removeAll();
-                              store.add([
-                                {
-                                  type: "Income",
-                                  amount: summaryData.totalIncome,
-                                },
-                                {
-                                  type: "Expense",
-                                  amount: summaryData.totalExpense,
-                                },
-                              ]);
-                            }, 300);
-
-                            chart.on("destroy", function () {
-                              clearInterval(intervalId);
-                            });
-                          },
-                        },
                       },
 
                       {
@@ -804,15 +782,9 @@ export const Analytics = (props) => {
                     ],
                     listeners: {
                       afterrender: function (grid) {
-                        const intervalId = setInterval(function () {
-                          const store = grid.getStore();
-                          store.removeAll();
-                          store.add(filteredData);
-                        }, 300);
-
-                        grid.on("destroy", function () {
-                          clearInterval(intervalId);
-                        });
+                        const store = grid.getStore();
+                        store.removeAll();
+                        store.add(transactionData);
                       },
                     },
                   },
