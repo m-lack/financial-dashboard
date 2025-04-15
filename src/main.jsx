@@ -4,6 +4,7 @@ import { Fill, ReExtProvider } from "@sencha/reext";
 import App from "./App";
 
 Fill();
+window.__IS_REEXT_RUNNING__ = true;
 var reactroot = ReactDOM.createRoot(document.getElementById("root"));
 var ReExtData = {
   sdkversion: "7.8.0",
