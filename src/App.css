@@ -1,0 +1,8 @@
+.x-panel-header-title-default > .x-title-text-default::after {
+  content: none !important;
+  display: none !important;
+}
+
+div[style*="z-index: 20000"][style*="bottom: 0px"] {
+  display: none !important;
+}
