@@ -11,7 +11,7 @@ export const LoginPanel = (props) => {
       xtype="panel"
       config={{
         bodyStyle: {
-          background: "url(/public/background.jpg)",
+          background: "url(/background.jpg)",
           backgroundSize: "cover",
         },
         layout: {
@@ -41,7 +41,7 @@ export const LoginPanel = (props) => {
           items: [
             {
               xtype: "image",
-              src: "/public/logo.png",
+              src: "/logo.png",
               height: 98,
             },
             {
